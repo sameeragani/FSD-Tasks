@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fun Facts Generator</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:linear-gradient(to right,#4facfe,#00f2fe);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            background:white;
+            width:500px;
+            padding:35px;
+            text-align:center;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            color:#0077b6;
+        }
+
+        #fact{
+            font-size:22px;
+            color:#333;
+            min-height:100px;
+            margin:25px 0;
+        }
+
+        button{
+            padding:12px 25px;
+            font-size:16px;
+            border:none;
+            border-radius:30px;
+            background:#0077b6;
+            color:white;
+            cursor:pointer;
+        }
+
+        button:hover{
+            transform:scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌟 Fun Facts Generator 🌟</h1>
+
+    <p id="fact">
+        Click the button to discover an amazing fact!
+    </p>
+
+    <button onclick="showFact()">
+        Show Fact
+    </button>
+
+</div>
+
+<script>
+
+const facts = [
+    "🐙 An octopus has three hearts.",
+    "🍯 Honey never spoils and can last thousands of years.",
+    "🦒 A giraffe's tongue can be up to 20 inches long.",
+    "🌍 Earth is the only known planet that supports life.",
+    "🦋 Butterflies taste with their feet.",
+    "⚡ Lightning is hotter than the surface of the Sun.",
+    "🐧 Penguins can swim but cannot fly.",
+    "🌙 The Moon has moonquakes just like Earth has earthquakes."
+];
+
+function showFact()
+{
+    let random = Math.floor(Math.random() * facts.length);
+
+    document.getElementById("fact").textContent = facts[random];
+}
+
+</script>
+
+</body>
+</html>
