@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial,sans-serif;
+            background:linear-gradient(to right,#4facfe,#00f2fe);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:450px;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 0 20px gray;
+        }
+
+        h1{
+            text-align:center;
+            color:#0077b6;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            margin-bottom:15px;
+            border:1px solid gray;
+            border-radius:5px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#0077b6;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#023e8a;
+        }
+
+        #message{
+            margin-top:15px;
+            text-align:center;
+            font-weight:bold;
+            font-size:18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Student Registration</h1>
+
+<label>Student Name</label>
+<input type="text" id="name" placeholder="Enter your name">
+
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter your email">
+
+<label>Phone Number</label>
+<input type="text" id="phone" placeholder="Enter 10-digit phone number">
+
+<label>Age</label>
+<input type="number" id="age" placeholder="Enter your age">
+
+<button onclick="validateForm()">
+Register
+</button>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+
+function validateForm()
+{
+    var name=document.getElementById("name").value;
+    var email=document.getElementById("email").value;
+    var phone=document.getElementById("phone").value;
+    var age=document.getElementById("age").value;
+
+    if(name=="")
+    {
+        document.getElementById("message").innerHTML="Please enter your name.";
+        document.getElementById("message").style.color="red";
+    }
+    else if(email=="")
+    {
+        document.getElementById("message").innerHTML="Please enter your email.";
+        document.getElementById("message").style.color="red";
+    }
+    else if(phone.length!=10)
+    {
+        document.getElementById("message").innerHTML="Phone number must contain 10 digits.";
+        document.getElementById("message").style.color="red";
+    }
+    else if(age<18)
+    {
+        document.getElementById("message").innerHTML="Age must be 18 or above.";
+        document.getElementById("message").style.color="red";
+    }
+    else
+    {
+        document.getElementById("message").innerHTML="✅ Registration Successful!";
+        document.getElementById("message").style.color="green";
+    }
+}
+
+</script>
+
+</body>
+</html>
